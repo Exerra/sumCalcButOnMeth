@@ -1,5 +1,5 @@
 function myFunction(a, b) {
-	const getValue = (a, b) => {
+	const getValue = async (a, b) => {
 		const getNumber = async (number) => {
 			const encode = (number) => {
 				let arr = []
@@ -42,10 +42,16 @@ function myFunction(a, b) {
 			return getNumber(b)
 		}
 
-		return getA(a, b) + getB(a, b)
+		const as = await (await getA(a, b)).toString()
+		const bs = await (await getB(a, b)).toString()
+
+		const ai = parseInt(as)
+		const bi = parseInt(bs)
+
+		return ai + bi
 	}
 
-	console.log(getValue(a, b))
+	return getValue(a, b)
 }
 
-myFunction(25, 49)
+myFunction(25, 49).then(n => {console.log(n)})
