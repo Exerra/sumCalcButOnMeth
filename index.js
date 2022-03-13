@@ -42,7 +42,7 @@ function myFunction(a, b) {
 			return getNumber(b)
 		}
 
-		return { a: getA(a, b), b: getB(a, b) }
+		return getA(a, b) + getB(a, b)
 	}
 
 	console.log(getValue(a, b))
