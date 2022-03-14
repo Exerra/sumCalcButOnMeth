@@ -1,3 +1,8 @@
+/*
+	This follows the format of the very popular beginners exercise of creating a very simple 3 line sum calc function
+
+	You can only edit everything *inside* of myFunction
+ */
 function myFunction(a, b) {
 	const getValue = async (a, b) => {
 		const getNumber = async (number) => {
