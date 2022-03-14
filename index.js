@@ -53,10 +53,19 @@ function myFunction(a, b) {
 		const ai = parseInt(as)
 		const bi = parseInt(bs)
 
-		return ai + bi
+		const add = (x, y) => {
+			if (y == 0)
+				return x;
+			else
+				return myFunction(x ^ y, (x & y) << 1);
+		}
+
+		let sum = await add(ai, bi)
+
+		return sum
 	}
 
 	return getValue(a, b)
 }
-
-myFunction(25, 49).then(n => {console.log(n)})
+console.time("myFunction")
+myFunction(25, 49).then(n => {console.log(n); console.timeEnd("myFunction")})
