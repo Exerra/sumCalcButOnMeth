@@ -10,7 +10,9 @@ function myFunction(a, b) {
 				let arr = []
 
 				for (let i = 0; i < number.toString().length; i++) {
-					arr.push(+number.toString().charAt(i))
+					let x = number.toString().charAt(i)
+					x = x * 4
+					arr.push(+x)
 				}
 
 				return arr
@@ -20,6 +22,7 @@ function myFunction(a, b) {
 				let str = ""
 
 				arr.forEach(s => {
+					s = s / 4
 					str += s.toString()
 				})
 
